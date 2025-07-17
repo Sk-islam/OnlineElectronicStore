@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Login | Online Electronic Store</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(to right, #e0f2f1, #b2dfdb);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-box {
+      background-color: #ffffff;
+      padding: 40px 50px;
+      border-radius: 20px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    .login-box h2 {
+      color: #00796b;
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .login-box h2 span {
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeInLetter 0.5s forwards;
+    }
+
+    @keyframes fadeInLetter {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+      transition: border 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      border-color: #00bcd4;
+      outline: none;
+    }
+
+    input[type="submit"] {
+      padding: 10px 30px;
+      background-color: #00bcd4;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #00838f;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>
+      <span>W</span>
+      <span>e</span>
+      <span>l</span>
+      <span>c</span>
+      <span>o</span>
+      <span>m</span>
+      <span>e</span>
+      <span> </span>
+      <span>A</span>
+      <span>d</span>
+      <span>m</span>
+      <span>i</span>
+      <span>n</span>
+      <span>,</span>
+      <span> </span>
+      <span>P</span>
+      <span>l</span>
+      <span>e</span>
+      <span>a</span>
+      <span>s</span>
+      <span>e</span>
+      <span> </span>
+      <span>L</span>
+      <span>o</span>
+      <span>g</span>
+      <span>i</span>
+      <span>n</span>
+    </h2>
+    <form action="AdminLoginServlet" method="post">
+      <input type="text" name="a_name" placeholder="Username" required>
+      <input type="password" name="a_password" placeholder="Password" required>
+      <input type="submit" value="Login">
+    </form>
+  </div>
+
+  <script>
+    const letters = document.querySelectorAll('.login-box h2 span');
+    letters.forEach((letter, index) => {
+      letter.style.animationDelay = `${index * 0.1}s`;
+    });
+  </script>
+</body>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Electronic Store</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #80deea);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      width: 100%;
+      background-color: #00796b;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 30px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      animation: slideDown 0.5s ease-out forwards;
+    }
+
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 6px 12px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      animation: wave 1s ease-in-out infinite alternate;
+    }
+
+    .navbar .logo img {
+      width: 40px;
+      height: 40px;
+      margin-right: 8px;
+    }
+
+    .navbar .logo span {
+      color: #00796b;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    .navbar-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border-radius: 30px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: #00bcd4;
+      transform: scale(1.1);
+    }
+
+    @keyframes wave {
+      from {
+        transform: rotate(-5deg);
+      }
+      to {
+        transform: rotate(5deg);
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 80px;
+      width: 80%;
+      max-width: 1200px;
+    }
+
+    .text-section {
+      flex: 1;
+      padding: 20px;
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    .text-section h1 {
+      font-size: 2.5em;
+      color: #00796b;
+      margin-bottom: 20px;
+    }
+
+    .text-section p {
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    .image-section {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      animation: fadeIn 1s ease-out forwards;
+      height: 500px;
+    }
+
+    .image-section img.main-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+      background: transparent;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .walking-cartoon {
+      position: fixed;
+      bottom: 30px;
+      left: -200px;
+      display: flex;
+      align-items: center;
+      animation: walkAcross 20s linear infinite;
+      z-index: 999;
+    }
+
+    .walking-cartoon img {
+      width: 100px;
+      height: auto;
+      margin-right: 10px;
+    }
+
+    .walking-cartoon .speech {
+      background-color: #ffffff;
+      border: 2px solid #00796b;
+      color: #00796b;
+      font-weight: bold;
+      padding: 10px 15px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      white-space: nowrap;
+    }
+
+    @keyframes walkAcross {
+      from {
+        left: -200px;
+      }
+      to {
+        left: 110%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png" alt="Hi">
+      <span>Hi! Welcome to our site</span>
+    </div>
+    <div class="navbar-links">
+      <a href="#">Home</a>
+      <a href="AdminLogin.html">Admin Login</a>
+      <a href="CustomerLogin.html">Customer Login</a>
+      <a href="#">Products</a>
+      <a href="#">Contact Us</a>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="text-section">
+      <h1>Welcome to the Online Electronic Store</h1>
+      <p>Your one-stop shop for the latest gadgets and electronics. Explore our wide range of products and enjoy unbeatable prices!</p>
+    </div>
+    <div class="image-section">
+      <img class="main-img" src="https://png.pngtree.com/png-vector/20220605/ourmid/pngtree-online-electronics-store-with-delivery-and-cashless-payment-vector-png-image_30977792.png" alt="Main Image">
+    </div>
+  </div>
+
+  <!-- Optional walking cartoon -->
+  
+  <div class="walking-cartoon">
+    <img src="https://cdn-icons-png.flaticon.com/512/1803/1803626.png" alt="Cartoon Man">
+    <div class="speech">Welcome to our site!</div>
+  </div>
+  
+
+</body>
+</html>

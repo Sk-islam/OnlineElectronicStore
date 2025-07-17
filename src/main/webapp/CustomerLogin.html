@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Login | Online Electronic Store</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(to right, #e3f2fd, #bbdefb);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      animation: backgroundAnimation 10s infinite alternate;
+    }
+
+    @keyframes backgroundAnimation {
+      0% {
+        background: linear-gradient(to right, #e3f2fd, #bbdefb);
+      }
+      50% {
+        background: linear-gradient(to right, #bbdefb, #90caf9);
+      }
+      100% {
+        background: linear-gradient(to right, #90caf9, #e3f2fd);
+      }
+    }
+
+    .login-container {
+      background-color: #fff;
+      padding: 40px 50px;
+      border-radius: 20px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      animation: fadeIn 1s ease-out forwards;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .login-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .welcome-text {
+      font-size: 1.5em;
+      color: #388e3c;
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .letter {
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeIn 0.5s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+      transition: border 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      border-color: #66bb6a;
+      outline: none;
+    }
+
+    input[type="submit"] {
+      padding: 10px 30px;
+      background-color: #43a047;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #2e7d32;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 15px;
+      color: #1b5e20;
+      text-decoration: none;
+      font-size: 1em;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="welcome-text" id="welcomeText"></div>
+    <form action="clogin" method="post">
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <input type="submit" value="Login">
+    </form>
+    <a href="CustomerRegistration.html">New Customer? Register Here</a>
+  </div>
+
+  <script>
+    const welcomeMessage = "Welcome to Customer";
+    const welcomeTextContainer = document.getElementById("welcomeText");
+
+    // Split the message into individual letters and create span elements
+    welcomeMessage.split('').forEach((letter, index) => {
+      const span = document.createElement("span");
+      span.textContent = letter;
+      span.classList.add("letter");
+      span.style.animationDelay = `${index * 0.1}s` // Delay for each letter
+      welcomeTextContainer.appendChild(span);
+    });
+  </script>
+</body>
+</html>
